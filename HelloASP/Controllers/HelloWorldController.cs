@@ -16,9 +16,12 @@ namespace HelloASP.Controllers
             return View();
         }
 
-        public string Welcome(string name, int age)
+        public ActionResult Welcome(string str, int times)
         {
-            return "Hello, " + name + ". Your age must be " + age;
+            ViewBag.String = str;
+            ViewBag.Times = times;
+
+            return View();
         }
 
     }
