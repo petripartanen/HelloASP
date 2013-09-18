@@ -11,9 +11,9 @@ namespace HelloASP.Controllers
         //
         // GET: /HelloWorld/
 
-        public string Index()
+        public ActionResult Index()
         {
-            return "This is default action";
+            return View();
         }
 
         public string Welcome(string name, int age)
