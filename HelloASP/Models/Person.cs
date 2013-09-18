@@ -13,7 +13,7 @@ namespace HelloASP.Models
         public int age { get; set; }
     }
 
-    public class PersonContext : DbContext
+    public class PersonDBContext : DbContext
     {
         public DbSet<Person> Persons { get; set; }
     }
