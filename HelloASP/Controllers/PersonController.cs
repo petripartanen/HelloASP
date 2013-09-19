@@ -111,6 +111,18 @@ namespace HelloASP.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult SearchIndex(string searchString)
+        {
+            var persons = from p in db.Persons select p;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                persons = persons.Where(s => s.name.Contains(searchString));
+            }
+
+            return View(persons);
+        }
+
         protected override void Dispose(bool disposing)
         {
             db.Dispose();
